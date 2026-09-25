@@ -1,0 +1,18 @@
+class Solution {                              //question is to find the element in the given array of the digit sum is equal to the smallest index
+    public int smallestIndex(int[] nums) {
+        for(int i=0;i<nums.length;i++){        //traversing the array which takes o(n)
+            int sum=0;                         //assigns the sum variable to add the every element which takes o(1)
+            int temp=nums[i];                  //creating a temporary variable for the elements in the array did not mismatch which takes o(1)
+            while(temp>0){                     //traversing the element until it gets 0 which take o(n)      
+                sum+=temp%10;                  //the sum can takes the last value of the element and added recursively which takes o(1)
+                temp/=10;                      //for eliminating the last value of the element the divide is used which takes o(1)
+              }
+            if(sum==i){                        //check whether the index of i and sum is equal which takes o(1)
+                return sum;                    //if the statement true it will return the sum or i whic takes 0(1)
+            }
+        }
+        return -1;                             //if no elements matchs the index means returns the value as -1 which take o(1)
+    }
+}
+
+TIME COMPLEXITY:o(n*n) because we use the two loops
